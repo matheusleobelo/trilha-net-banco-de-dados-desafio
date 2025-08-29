@@ -16,3 +16,16 @@ from Filmes
 group by Ano   
 order by COUNT(Ano) DESC
 -- Consulta 8
+select Id, PrimeiroNome, UltimoNome, Genero from Atores
+where Genero = "M"
+-- Consulta 9
+select Id, PrimeiroNome, UltimoNome, Genero from Atores
+where Genero = "F"
+order by PrimeiroNome ASC;
+-- Consulta 10
+select * from Filmes inner join FilmesGenero on Filmes.Id = FilmesGenero.IdFilme
+-- Consulta 11
+select * from Filmes inner join FilmesGenero on Filmes.Id = FilmesGenero.IdFilme inner join Generos on FilmesGenero.IdGenero = Generos.Id
+where  Genero = "Mistério"
+-- Consulta 12
+select Nome, PrimeiroNome, UltimoNome, Papel from Filmes inner join ElencoFilme on Filmes.Id = ElencoFilme.IdFilme inner join Atores on ElencoFilme.IdAtor = Atores.Id
